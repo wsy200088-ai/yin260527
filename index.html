@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>尹衍樑與潤泰集團 · 深度研究報告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:    #fbf1d7;
+  --peach:    #fad6b5;
+  --pink:     #faadac;
+  --lavender: #fcdfe5;
+  --mint:     #daf1ee;
+  --teal:     #b6e3e7;
+  --ink:      #2c2416;
+  --ink-mid:  #5a4a38;
+  --ink-light:#8a7a68;
+  --rule:     rgba(92,74,56,0.13);
+  --white:    #ffffff;
+  --nav-h:    60px;
+  --safe-b:   env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+  padding-bottom: calc(var(--nav-h) + var(--safe-b) + 12px);
+}
+
+/* ── TOP HEADER ── */
+.top-header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(251,241,215,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 18px;
+  height: 50px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.top-brand {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+.top-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--peach);
+  color: var(--ink-mid);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  background: rgba(251,241,215,0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--rule);
+  padding-bottom: var(--safe-b);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.bottom-nav::-webkit-scrollbar { display: none; }
+.bottom-nav-inner {
+  display: flex;
+  padding: 8px 12px;
+  gap: 6px;
+  min-width: max-content;
+}
+.nav-pill {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 6px 14px;
+  border-radius: 22px;
+  border: 1px solid var(--rule);
+  background: white;
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s;
+  min-width: 52px;
+  gap: 1px;
+}
+.nav-pill.active, .nav-pill:active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.nav-pill-icon { font-size: 15px; line-height: 1; }
+.nav-pill-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--ink-mid);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.nav-pill.active .nav-pill-label { color: white; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 90vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 60px 20px 40px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(155deg, var(--cream) 0%, var(--lavender) 60%, var(--mint) 100%);
+}
+.hero-deco {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, var(--teal) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, var(--pink) 0%, transparent 50%);
+  opacity: 0.3; pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-mid);
+  background: var(--peach); padding: 5px 14px;
+  border-radius: 20px; margin-bottom: 20px; width: fit-content;
+}
+.hero-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(34px, 9vw, 52px);
+  font-weight: 900; line-height: 1.15;
+  margin-bottom: 14px;
+}
+.hero-title span { color: var(--pink); }
+.hero-sub {
+  font-size: 15px; color: var(--ink-mid);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.hero-meta-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+}
+.hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+.hero-meta-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-light);
+}
+.hero-meta-value {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 13px; font-weight: 700; color: var(--ink);
+  line-height: 1.4;
+}
+.scroll-hint {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 24px; font-size: 10px;
+  color: var(--ink-light); letter-spacing: 0.1em;
+}
+.scroll-arrow {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* ── SECTION BASE ── */
+section { padding: 52px 20px; }
+.section-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-light); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-label::after {
+  content: ''; flex: 1; max-width: 48px;
+  height: 1px; background: var(--rule);
+}
+.section-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(22px, 5.5vw, 30px);
+  font-weight: 700; line-height: 1.35;
+  margin-bottom: 28px; letter-spacing: -0.01em;
+}
+
+/* ── CARDS ── */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 18px;
+  border: 1px solid var(--rule);
+  margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.card-accent-top { height: 4px; border-radius: 4px; margin-bottom: 14px; }
+.card-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px;
+}
+.card-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); margin-bottom: 8px; line-height: 1.4;
+}
+.card-body { font-size: 14px; color: var(--ink-mid); line-height: 1.8; }
+
+/* ── SUMMARY TABLE ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 0; border-radius: 14px; border: 1px solid var(--rule); background: white; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 500px; }
+thead th {
+  background: var(--ink); color: white;
+  font-weight: 600; font-size: 11px;
+  padding: 12px 14px; text-align: left; white-space: nowrap;
+}
+tbody tr { border-bottom: 1px solid var(--rule); }
+tbody tr:last-child { border-bottom: none; }
+tbody td { padding: 11px 14px; vertical-align: top; line-height: 1.6; color: var(--ink-mid); font-size: 13px; }
+tbody td:first-child { color: var(--ink); font-weight: 700; font-family: 'Noto Serif TC', serif; white-space: nowrap; }
+.badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px;
+  background: var(--mint); color: var(--ink); white-space: nowrap;
+}
+
+/* ── NOTE BOX ── */
+.note-box {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 14px; color: var(--ink-mid); line-height: 1.8;
+  border-left: 4px solid var(--teal);
+  margin-bottom: 20px;
+}
+.note-box strong { color: var(--ink); }
+
+/* ── SECTION BG ── */
+#summary     { background: var(--cream); }
+#legend      { background: var(--lavender); }
+#patent      { background: var(--mint); }
+#finance     { background: var(--peach); }
+#philanthropy{ background: var(--cream); }
+#controversy { background: var(--teal); }
+#timeline    { background: var(--lavender); }
+#conclusion  { background: var(--ink); color: white; }
+
+/* ── QUOTES ── */
+.quote-card {
+  background: white; border-radius: 14px;
+  padding: 18px 18px 16px;
+  border: 1px solid var(--rule);
+  margin-bottom: 12px;
+}
+.quote-text {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); line-height: 1.5; margin-bottom: 6px;
+}
+.quote-text::before { content: '「'; color: var(--pink); }
+.quote-text::after  { content: '」'; color: var(--pink); }
+.quote-meta  { font-size: 11px; color: var(--ink-light); margin-bottom: 4px; }
+.quote-interp { font-size: 13px; color: var(--ink-mid); line-height: 1.6; }
+
+/* ── STAT CARDS ── */
+.stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
+.stat-card {
+  background: white; border-radius: 14px;
+  padding: 16px 10px; text-align: center;
+  border: 1px solid var(--rule);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700;
+  color: var(--ink); line-height: 1; margin-bottom: 4px;
+}
+.stat-note { font-size: 9px; color: var(--ink-light); margin-bottom: 4px; line-height: 1.4; }
+.stat-label { font-size: 11px; color: var(--ink-mid); font-weight: 500; line-height: 1.3; }
+
+/* ── FINANCE TABS ── */
+.f-tabs {
+  display: flex; gap: 8px; overflow-x: auto;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px; padding-bottom: 2px;
+}
+.f-tabs::-webkit-scrollbar { display: none; }
+.f-tab {
+  flex: none;
+  padding: 8px 18px;
+  border-radius: 22px;
+  border: 1px solid var(--rule);
+  background: white;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+  color: var(--ink-mid);
+  font-family: 'Noto Sans TC', sans-serif;
+  transition: background 0.18s;
+}
+.f-tab.active { background: var(--ink); color: white; border-color: var(--ink); }
+.f-panel { display: none; }
+.f-panel.active { display: block; }
+
+/* ── BAR CHART ── */
+.chart-legend { display: flex; gap: 16px; margin-bottom: 12px; }
+.legend-dot { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-mid); }
+.legend-dot::before { content: ''; width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.legend-dot.rev::before { background: var(--teal); }
+.legend-dot.net::before { background: var(--pink); }
+.finance-chart {
+  display: flex; align-items: flex-end; gap: 10px;
+  height: 160px; padding-top: 10px; margin-bottom: 20px;
+}
+.bar-group { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; }
+.bar-wrap { display: flex; gap: 3px; align-items: flex-end; width: 100%; justify-content: center; }
+.bar { width: 22px; border-radius: 5px 5px 0 0; }
+.bar-rev { background: var(--teal); }
+.bar-net { background: var(--pink); }
+.bar-label { font-size: 10px; color: var(--ink-light); font-weight: 600; text-align: center; }
+
+/* ── TIMELINE ── */
+.tl-wrap { position: relative; padding-left: 36px; }
+.tl-wrap::before {
+  content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--pink), var(--teal));
+  border-radius: 2px;
+}
+.tl-item {
+  position: relative; margin-bottom: 14px;
+  background: white; border-radius: 14px;
+  padding: 16px 16px;
+  border: 1px solid var(--rule);
+}
+.tl-item::before {
+  content: '';
+  position: absolute; left: -31px; top: 20px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: white; border: 3px solid var(--pink);
+  box-shadow: 0 0 0 3px rgba(250,173,172,0.2);
+}
+.tl-year {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: var(--pink);
+  line-height: 1; margin-bottom: 4px;
+}
+.tl-event { font-size: 14px; color: var(--ink-mid); line-height: 1.7; }
+
+/* ── PHILANTHROPY TIMELINE ── */
+.phil-wrap { position: relative; padding-left: 36px; }
+.phil-wrap::before {
+  content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--peach), var(--teal));
+  border-radius: 2px;
+}
+.phil-item {
+  position: relative; margin-bottom: 14px;
+  background: white; border-radius: 14px;
+  padding: 18px 16px;
+  border: 1px solid var(--rule);
+}
+.phil-item::before {
+  content: '';
+  position: absolute; left: -31px; top: 22px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: white; border: 3px solid var(--peach);
+  box-shadow: 0 0 0 3px rgba(250,214,181,0.3);
+}
+.phil-year {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--ink-mid); line-height: 1; margin-bottom: 4px;
+}
+.phil-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px;
+}
+.phil-body { font-size: 13px; color: var(--ink-mid); line-height: 1.75; }
+.phil-tag {
+  display: inline-block; margin-top: 8px;
+  font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+}
+
+/* ── CONTRAST ── */
+.contrast-toggle {
+  display: flex; gap: 8px; margin-bottom: 18px;
+}
+.ctoggle-btn {
+  flex: 1; padding: 10px 0;
+  border-radius: 12px; border: 1px solid var(--rule);
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: white; color: var(--ink-mid);
+  transition: background 0.18s;
+}
+.ctoggle-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
+.contrast-panel { display: none; }
+.contrast-panel.active { display: block; }
+.contrast-col {
+  background: white; border-radius: 14px;
+  padding: 18px 16px; border: 1px solid var(--rule);
+}
+.contrast-col-header {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 5px 12px;
+  border-radius: 20px; margin-bottom: 16px; display: inline-block;
+}
+.contrast-col.pos .contrast-col-header { background: var(--mint); color: var(--ink); }
+.contrast-col.neg .contrast-col-header { background: var(--lavender); color: var(--ink); }
+.contrast-row { padding: 10px 0; border-bottom: 1px dashed var(--rule); }
+.contrast-row:last-child { border-bottom: none; }
+.contrast-row-label { font-size: 11px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.contrast-row-body { font-size: 13px; color: var(--ink-mid); line-height: 1.7; }
+
+/* ── CONCLUSION ── */
+#conclusion .section-label { color: rgba(255,255,255,0.4); }
+#conclusion .section-label::after { background: rgba(255,255,255,0.15); }
+#conclusion .section-title { color: white; }
+.conc-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px; padding: 20px 18px; margin-bottom: 12px;
+}
+.conc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 700;
+  color: var(--peach); opacity: 0.55;
+  line-height: 1; margin-bottom: 8px;
+}
+.conc-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px; font-weight: 700;
+  color: white; margin-bottom: 6px;
+}
+.conc-body { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.limitation-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: 14px; padding: 20px 18px; margin-bottom: 28px;
+}
+.limitation-box h3 {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 12px;
+}
+.limitation-box p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 10px; }
+.limitation-box p:last-child { margin-bottom: 0; }
+.next-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 18px 16px; margin-bottom: 12px;
+}
+.next-badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+  letter-spacing: 0.06em;
+}
+.next-card:nth-child(1) .next-badge { background: var(--peach); color: var(--ink); }
+.next-card:nth-child(2) .next-badge { background: var(--mint); color: var(--ink); }
+.next-card:nth-child(3) .next-badge { background: var(--lavender); color: var(--ink); }
+.next-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px;
+}
+.next-body { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.75; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--cream); border-top: 1px solid var(--rule);
+  padding: 24px 20px; text-align: center;
+  font-size: 11px; color: var(--ink-light); line-height: 1.7;
+}
+
+/* ── FADE-UP ── */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <span class="top-brand">尹衍樑 × 潤泰集團</span>
+  <span class="top-badge">2026 REPORT</span>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-tag">Deep Research Report · 2026</div>
+  <h1 class="hero-title">尹衍樑<br>與<span>潤泰集團</span><br>深度研究報告</h1>
+  <p class="hero-sub">他不是典型企業繼承人，而是把工程、投資、治理、敘事整合成一個系統的複合型人物。2026 年 5 月 26 日辭世，享壽 76 歲。</p>
+  <div class="hero-meta-row">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">研究核心</span>
+      <span class="hero-meta-value">身分定位 · 集團版圖 · 專利判讀 · 公益評價</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">報告日期</span>
+      <span class="hero-meta-value">2026 年 5 月</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrow">↓</div>向下滑動探索</div>
+</section>
+
+<!-- 01 SUMMARY -->
+<section id="summary">
+  <div class="section-label">01 · Executive Summary</div>
+  <h2 class="section-title">四項最重要的研究判讀</h2>
+
+  <div class="fade-up">
+    <div class="card">
+      <div class="card-accent-top" style="background:var(--pink);"></div>
+      <div class="card-label">身分定位</div>
+      <div class="card-title">企業家之外，更是工程研發者、教育公益家與公共人物</div>
+      <div class="card-body">把「傳統企業第二代」這個標籤套在他身上，嚴重低估其影響力。他用工程、投資、治理、敘事四重角色，重新塑造了潤泰與台灣社會的接觸面。</div>
+    </div>
+    <div class="card">
+      <div class="card-accent-top" style="background:var(--peach);"></div>
+      <div class="card-label">集團本質</div>
+      <div class="card-title">核心已由紡織轉為不動產、保險、零售與投資控股混合體</div>
+      <div class="card-body">2006–2007 南港、松山車站 BOT 開發，以及 2010–2011 透過潤成投控入主南山人壽，是決定潤泰今日資產型結構的兩次關鍵布局。</div>
+    </div>
+    <div class="card">
+      <div class="card-accent-top" style="background:var(--teal);"></div>
+      <div class="card-label">專利判讀</div>
+      <div class="card-title">總量高，但公開數字有三種口徑，需分辨統計母體</div>
+      <div class="card-body">工研院 2022：19 國 650+ 件；唐獎 2026：19 國 753 件；潤泰創新永續報告（含協同供應商）：710 件。三數字不矛盾，但統計邊界不同，不可混用。</div>
+    </div>
+    <div class="card">
+      <div class="card-accent-top" style="background:var(--lavender);"></div>
+      <div class="card-label">公益評價</div>
+      <div class="card-title">高實體建設型公益，對教育與醫療基礎設施有實質改變</div>
+      <div class="card-body">唐獎、達賢圖書館、台大土木研究大樓、北榮重粒子中心——每一項都是高資本支出、長期可見、可反覆引用的公益資產，且附帶制度性設計要求。</div>
+    </div>
+    <div class="card">
+      <div class="card-accent-top" style="background:var(--mint);"></div>
+      <div class="card-label">爭議輪廓</div>
+      <div class="card-title">主要是政商關係、南山曝險與周邊司法風波，非個人定讞刑案</div>
+      <div class="card-body">爭議集中在三類：① 歷史性政商關係 ② 南山持股對上市公司財務的市場爭議 ③ 個別司法事件中的周邊角色（如 2016 年浩鼎案以證人身分出現）。</div>
+    </div>
+  </div>
+
+  <div class="table-scroll fade-up" style="margin-top:8px;">
+    <table>
+      <thead>
+        <tr><th>研究判讀</th><th>核心結論</th><th>主要依據</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>身分定位</td><td>企業家＋工程研發者＋教育公益家＋公共人物</td><td>CNA、工研院、唐獎官方資料</td></tr>
+        <tr><td>集團本質</td><td>紡織 → 不動產、保險、零售、投資控股混合體</td><td>潤泰創新年報、潤泰全球年報</td></tr>
+        <tr><td>專利判讀</td><td>650+ / 710 / 753 三種口徑，統計母體不同</td><td>工研院、潤泰創新永續報告、中央社</td></tr>
+        <tr><td>公益評價</td><td>高可見度制度型建設，對教育醫療有實質改變</td><td>政大、北榮、台大、唐獎</td></tr>
+        <tr><td>爭議輪廓</td><td>政商關係、南山曝險、周邊司法，非個人定讞</td><td>天下、PTS、商周</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 02 LEGEND -->
+<section id="legend">
+  <div class="section-label">02 · 傳奇人生與爭議</div>
+  <h2 class="section-title">叛逆少年到複合型企業強人</h2>
+
+  <div class="fade-up">
+    <div class="card" style="margin-bottom:20px;">
+      <div class="card-body">
+        <p style="margin-bottom:12px;">1950 年生於台北。父親尹書田是台灣紡織業外銷先驅。少年時期在彰化進德中學接受管訓，遇到數學老師<strong>王金平</strong>——這段師生關係後來成為他人生最關鍵的轉折。</p>
+        <p style="margin-bottom:12px;">學歷：文化大學歷史系 → 台大商學研究所碩士 → <strong>政大企業管理博士</strong>。之後兼任台大土木系教授與北京大學博士生導師。</p>
+        <p style="margin-bottom:12px;">職涯是「接家業後重新定義家業」。紡織是起點，但今日熟知的潤泰，其關鍵資產多由尹衍樑時期擴張塑形：<strong>預鑄工程、車站 BOT、南山人壽持股、CITYLINK 商場</strong>。</p>
+        <p>管理風格接近「高授權、高壓力、高人情槓桿」的混合型領導。商周概括為「義與利」，天下在 2000 年就把他放入「紅頂商人」脈絡。</p>
+      </div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-text">促使我進步的，全是挫折！</div>
+      <div class="quote-meta">彰師大名譽博士介紹</div>
+      <div class="quote-interp">強調失敗學習，解釋其敢承擔高風險布局的根源。</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">我一生都是利用犯錯來學習</div>
+      <div class="quote-meta">人物專訪回顧</div>
+      <div class="quote-interp">不是避免犯錯，而是把犯錯制度化為學習機制。</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">我的發明就是要運用</div>
+      <div class="quote-meta">唐獎基金會悼念引述、中央社報導</div>
+      <div class="quote-interp">專利是工地與產業工具，不是僅供資產化陳列的數字。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PATENT -->
+<section id="patent">
+  <div class="section-label">03 · 專利與技術貢獻</div>
+  <h2 class="section-title">從預鑄到低碳材料：一條高度一致的技術主軸</h2>
+
+  <div class="stat-row fade-up">
+    <div class="stat-card">
+      <div class="stat-num">753</div>
+      <div class="stat-note">2026 唐獎 / 中央社</div>
+      <div class="stat-label">19 國已取得</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">710</div>
+      <div class="stat-note">潤泰創新 2022 永續報告</div>
+      <div class="stat-label">含協同供應商</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">650+</div>
+      <div class="stat-note">工研院 2022 院士資料</div>
+      <div class="stat-label">當時累計件數</div>
+    </div>
+  </div>
+
+  <div class="note-box fade-up">
+    ⚠️ 三個數字並不矛盾，但分別代表<strong>不同時間點與不同統計邊界</strong>，不可混用。<br><br>
+    專利主體高度集中於潤弘精密、潤泰精材等<strong>營建技術體系</strong>，潤泰全球本公司截至 2024 年 11 月底<strong>專利為 0 件</strong>。<br><br>
+    另值得注意：他曾將「一筆箍」等 <strong>21 項營建專利免費開放</strong>外界使用，體現「標準制定型發明人」思維，而非純財務型資產操作者。
+  </div>
+
+  <div class="table-scroll fade-up">
+    <table>
+      <thead>
+        <tr><th>專利號</th><th>國家</th><th>技術類別</th><th>摘要重點</th><th>授權日</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>US10344468</td><td><span class="badge">美國</span></td><td>承重柱系統</td><td>RC 柱與鋼柱複合承重柱，適用廠房結構</td><td>2019-07-09</td></tr>
+        <tr><td>TWI656263B</td><td><span class="badge">台灣</span></td><td>承重柱系統</td><td>與美國案同族，台灣核准版本</td><td>2019-04-11</td></tr>
+        <tr><td>CN109505379B</td><td><span class="badge">中國</span></td><td>工廠柱體</td><td>同族中國案，適用工廠柱體與廠房配置</td><td>2021-08-24</td></tr>
+        <tr><td>US10125457B1</td><td><span class="badge">美國</span></td><td>施工流程</td><td>不規則格板施工法，改善工地動線與工安</td><td>2018-11-13</td></tr>
+        <tr><td>US10562816B2</td><td><span class="badge">美國</span></td><td>低碳材料</td><td>非燒結膠結材料，接近或優於傳統水泥</td><td>2020-02-18</td></tr>
+        <tr><td>US11486143B1</td><td><span class="badge">美國</span></td><td>錨定組裝</td><td>中間錨定總成，提高節點可靠度</td><td>2023-02-07</td></tr>
+        <tr><td>US12486680B1</td><td><span class="badge">美國</span></td><td>定位工具件</td><td>支撐螺桿與錨體支撐件，最新授權案</td><td>2026-01-27</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 04 FINANCE -->
+<section id="finance">
+  <div class="section-label">04 · 集團版圖與財務</div>
+  <h2 class="section-title">資產開發＋現金流＋金融投資＋技術施工的垂直網絡</h2>
+
+  <div class="f-tabs fade-up">
+    <button class="f-tab active" onclick="switchTab('cre')">潤泰創新 9945</button>
+    <button class="f-tab" onclick="switchTab('global')">潤泰全球 2915</button>
+    <button class="f-tab" onclick="switchTab('ns')">南山人壽</button>
+    <button class="f-tab" onclick="switchTab('struct')">集團結構</button>
+  </div>
+
+  <div id="tab-cre" class="f-panel active fade-up">
+    <div class="chart-legend">
+      <span class="legend-dot rev">營收（億元）</span>
+      <span class="legend-dot net">淨利（億元）</span>
+    </div>
+    <div class="finance-chart" id="chart-cre"></div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>年度</th><th>營收（億）</th><th>淨利（億）</th><th>總資產（億）</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2020</td><td>190.85</td><td>85.58</td><td>1,863.89</td><td>取自 2021 年報</td></tr>
+          <tr><td>2021</td><td>272.94</td><td>184.10*</td><td>—</td><td>*口徑為稅後淨利</td></tr>
+          <tr><td>2022</td><td>322.47</td><td>91.55</td><td>1,644.88</td><td>取自 2023 年報</td></tr>
+          <tr><td>2023</td><td>273.94</td><td>77.45</td><td>1,769.09</td><td>取自 2024 股東會</td></tr>
+          <tr><td>2024</td><td>318.17</td><td>165.63</td><td>1,939.65</td><td>取自 2025 年報</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-global" class="f-panel fade-up">
+    <div class="note-box" style="border-left-color:var(--pink);margin-bottom:16px;">
+      潤泰全球展示另一種集團特性：<strong>營收不高，但淨利巨大且波動</strong>——本質更接近投資與權益法收益平台，而不是單一本業驅動。
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>年度</th><th>營收（億）</th><th>淨利（億）</th><th>結構解讀</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2022</td><td>28.74</td><td>120.63</td><td>營收遠低於淨利，獲利高度依賴投資與轉投資收益</td></tr>
+          <tr><td>2023</td><td>26.81</td><td>75.75</td><td>仍維持投資收益型特徵</td></tr>
+          <tr><td>2024</td><td>28.93</td><td>137.39</td><td>獲利彈升，與權益法投資波動關聯性高</td></tr>
+          <tr><td>2025</td><td>24.21</td><td>98.95</td><td>地緣政治與消費轉弱使營收下滑，投資收益仍支撐獲利</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-ns" class="f-panel fade-up">
+    <div class="note-box" style="border-left-color:var(--pink);margin-bottom:16px;">
+      ⚠️ 風險提示：南山評價波動對潤泰系股價的外溢效果，是集團治理爭議反覆出現的根源。2022 年相關評價問題曾明顯拖累潤泰新、潤泰全股價與淨值。
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>指標</th><th>數據</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2024 年總資產</td><td>約 5.624 兆元</td><td>潤泰創新 2025Q1 揭露</td></tr>
+          <tr><td>2024 年總負債</td><td>約 5.267 兆元</td><td>同上</td></tr>
+          <tr><td>潤泰創新投資額</td><td>約 200.4 億元</td><td>市值換算約 23% 曝險</td></tr>
+          <tr><td>持股架構</td><td>透過潤成投控持有</td><td>2010–2011 完成本土化</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-struct" class="f-panel fade-up">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>公司</th><th>主要業務</th><th>研究判讀</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>潤泰創新 9945</td><td>住宅開發、都更、BOT、保險投資</td><td>「資產型潤泰」樞紐；獲利高度受南山影響</td></tr>
+          <tr><td>潤泰全球 2915</td><td>紡織國貿、品牌零售、投資控股</td><td>歷史起家本體；本公司專利為 0 件</td></tr>
+          <tr><td>潤弘精密 2597</td><td>預鑄工法、高科技廠房</td><td>尹衍樑技術影響最集中的主戰場</td></tr>
+          <tr><td>潤泰精材 8463</td><td>水泥、建材、特殊材料</td><td>低碳材料與建材商品化載體</td></tr>
+          <tr><td>南山人壽</td><td>人壽保險、資產管理</td><td>最重要金融槓桿，也是股價波動爭議核心</td></tr>
+          <tr><td>潤泰旭展、潤泰百益</td><td>南港、松山 BOT、CITYLINK</td><td>穩定租金與現金流</td></tr>
+          <tr><td>大潤發（歷史資產）</td><td>量販零售</td><td>2022 售出；2025 併入 PX Mart；已非核心</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PHILANTHROPY -->
+<section id="philanthropy">
+  <div class="section-label">05 · 公益與社會影響</div>
+  <h2 class="section-title">高額度、可見度高、帶有制度設計感的長期公益</h2>
+
+  <div class="phil-wrap fade-up">
+    <div class="phil-item">
+      <div class="phil-year">1989</div>
+      <div class="phil-name">光華教育基金會 × 北大光華管理學院</div>
+      <div class="phil-body">設立光華教育基金會，在北京大學設光華獎學金，之後推動光華管理學院。兼具教育捐贈與兩岸學術網絡布局雙重效果。</div>
+      <span class="phil-tag" style="background:var(--mint);color:var(--ink);">教育 · 兩岸</span>
+    </div>
+    <div class="phil-item">
+      <div class="phil-year">2007</div>
+      <div class="phil-name">台大土木研究大樓</div>
+      <div class="phil-body">簽訂捐贈意向書，捐贈 2 億元，整體造價逾 2.6 億元。對工程教育與研究空間有直接改善效果。</div>
+      <span class="phil-tag" style="background:var(--peach);color:var(--ink);">工程教育</span>
+    </div>
+    <div class="phil-item">
+      <div class="phil-year">2012</div>
+      <div class="phil-name">唐獎（個人捐資約 30 億元）</div>
+      <div class="phil-body">涵蓋永續發展、生技醫藥、漢學、法治四獎項。不是品牌活動，而是對台灣國際學術能見度與議題設定的長期投資。</div>
+      <span class="phil-tag" style="background:var(--pink);color:white;">國際學術 · 議題設定</span>
+    </div>
+    <div class="phil-item">
+      <div class="phil-year">2015</div>
+      <div class="phil-name">北榮重粒子癌症治療中心</div>
+      <div class="phil-body">捐贈 15 億元興建主體與加速器基座；其後再捐 2 億元；並要求每年提供 2% 免費治療名額給弱勢患者。附帶制度性條件，非純捐款。</div>
+      <span class="phil-tag" style="background:var(--teal);color:var(--ink);">醫療 · 弱勢名額</span>
+    </div>
+    <div class="phil-item">
+      <div class="phil-year">2017</div>
+      <div class="phil-name">政大達賢圖書館</div>
+      <div class="phil-body">捐資興建，以恩師司徒達賢命名。把私人情感轉為公共知識基礎設施，成為政大地標，體現「人情投資長期制度化」。</div>
+      <span class="phil-tag" style="background:var(--lavender);color:var(--ink);">知識基礎設施</span>
+    </div>
+  </div>
+
+  <div class="note-box fade-up" style="border-left-color:var(--peach);margin-top:8px;">
+    💡 批判性判讀：尹衍樑的公益幾乎都同時具有「社會影響」與「敘事資本」雙重效果。唐獎不只是善舉，也是一套國際學術品牌。這不是否定其公益，而是指出其設計思維的精密性。
+  </div>
+</section>
+
+<!-- 06 CONTROVERSY -->
+<section id="controversy">
+  <div class="section-label">06 · 產業政治文化影響與評議</div>
+  <h2 class="section-title">雙面刃：正面觀點與批判觀點並排</h2>
+
+  <div class="contrast-toggle fade-up">
+    <button class="ctoggle-btn active" onclick="switchContrast('pos')">✅ 正面觀點</button>
+    <button class="ctoggle-btn" onclick="switchContrast('neg')">⚡ 批判觀點</button>
+  </div>
+
+  <div id="cp-pos" class="contrast-panel active fade-up">
+    <div class="contrast-col pos">
+      <span class="contrast-col-header">正面觀點</span>
+      <div class="contrast-row">
+        <div class="contrast-row-label">營建</div>
+        <div class="contrast-row-body">推動預鑄、耐震、工業化施工，提升效率與品質。被工研院定位為帶動「台灣營建工程精密化及施工自動化」的先驅。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">零售</div>
+        <div class="contrast-row-body">大潤發與 CITYLINK 改變台灣消費與交通節點商業模式，1990–2010 年代非常成功。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">金融</div>
+        <div class="contrast-row-body">南山人壽本土化，台灣大型壽險公司的本土經營回歸，壽險資產規模巨大。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">政治</div>
+        <div class="contrast-row-body">可跨界整合政商學術資源，推動大型公共計畫，藍綠皆通、兩岸也能接。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">公益</div>
+        <div class="contrast-row-body">唐獎、校園建設、醫療基礎設施帶來長期公共利益，附帶制度性設計要求。</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cp-neg" class="contrast-panel fade-up">
+    <div class="contrast-col neg">
+      <span class="contrast-col-header">批判觀點</span>
+      <div class="contrast-row">
+        <div class="contrast-row-label">營建</div>
+        <div class="contrast-row-body">站在高資產都市開發核心，易被批判為豪宅與資產化城市邏輯推手，未能強化普惠型住宅供給。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">零售</div>
+        <div class="contrast-row-body">量販退場後顯示零售優勢也面臨型態替換，大潤發已出售且完成與 PX Mart 的合併程序。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">金融</div>
+        <div class="contrast-row-body">南山曝險拖累上市公司淨值與市場情緒，形成「保險大到足以反向支配母集團股價情緒」的集團治理風險。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">政治</div>
+        <div class="contrast-row-body">長年「紅頂商人」標籤，兩岸政商中介角色引發疑慮。企業家是否應同時扮演如此高權重的政治中介，值得討論。</div>
+      </div>
+      <div class="contrast-row">
+        <div class="contrast-row-label">公益</div>
+        <div class="contrast-row-body">公益同時累積個人與集團的象徵資本與敘事優勢，具有公共形象與文化影響建構效果。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box fade-up" style="border-left-color:var(--ink);margin-top:8px;background:rgba(255,255,255,0.7);">
+    📌 爭議釐清：2016 年浩鼎案中，公開資料可確認他以<strong>證人身分</strong>到案說明，而非被告定罪角色。三類主要爭議：① 歷史性政商關係 ② 南山持股對潤泰系上市公司財務的市場爭議 ③ 個別司法事件周邊角色。
+  </div>
+</section>
+
+<!-- 07 TIMELINE -->
+<section id="timeline">
+  <div class="section-label">07 · 時間軸</div>
+  <h2 class="section-title">生涯與潤泰集團重要節點</h2>
+
+  <div class="tl-wrap fade-up">
+    <div class="tl-item"><div class="tl-year">1943</div><div class="tl-event">潤泰集團創立於上海</div></div>
+    <div class="tl-item"><div class="tl-year">1950</div><div class="tl-event">尹衍樑生於台北，父親尹書田為紡織業外銷先驅</div></div>
+    <div class="tl-item"><div class="tl-year">1960s</div><div class="tl-event">在彰化進德中學接受管訓，遇到數學老師王金平，成為人生關鍵轉折</div></div>
+    <div class="tl-item"><div class="tl-year">1986</div><div class="tl-event">取得政治大學企業管理博士學位</div></div>
+    <div class="tl-item"><div class="tl-year">1989</div><div class="tl-event">設立光華教育基金會，在北大設光華獎學金</div></div>
+    <div class="tl-item"><div class="tl-year">1992</div><div class="tl-event">潤泰創新股票上市</div></div>
+    <div class="tl-item"><div class="tl-year">2006–07</div><div class="tl-event">取得南港車站、松山車站兩大 BOT 開發權，奠定 CITYLINK 商場模式基礎</div></div>
+    <div class="tl-item"><div class="tl-year">2010–11</div><div class="tl-event">透過潤成投控入主南山人壽，完成本土化關鍵併購</div></div>
+    <div class="tl-item"><div class="tl-year">2012</div><div class="tl-event">以個人名義捐資 30 億元創辦唐獎，涵蓋四大獎項</div></div>
+    <div class="tl-item"><div class="tl-year">2015</div><td>承諾捐助北榮重粒子癌症治療中心 15 億元，附帶每年 2% 免費名額條件</div></div>
+    <div class="tl-item"><div class="tl-year">2017</div><div class="tl-event">捐資興建政大達賢圖書館，以恩師司徒達賢命名</div></div>
+    <div class="tl-item"><div class="tl-year">2022</div><div class="tl-event">獲工研院院士；台灣大潤發出售予全聯；官方資料稱 19 國 650+ 件專利</div></div>
+    <div class="tl-item"><div class="tl-year">2025</div><div class="tl-event">RT-Mart 與 PX Mart 完成合併，由 PX Mart 為存續公司</div></div>
+    <div class="tl-item" style="border-left:2px solid var(--pink);"><div class="tl-year" style="color:var(--ink);">2026</div><div class="tl-event"><strong>5 月 26 日辭世，享壽 76 歲。</strong>唐獎基金會更新資料為 19 國 753 件專利。</div></div>
+  </div>
+</section>
+
+<!-- 08 CONCLUSION -->
+<section id="conclusion">
+  <div class="section-label">08 · 結論與研究建議</div>
+  <h2 class="section-title">五項最穩固的主要發現</h2>
+
+  <div class="fade-up">
+    <div class="conc-card">
+      <div class="conc-num">01</div>
+      <div class="conc-title">傳奇性來自「多身份疊加」，而不只是財富</div>
+      <div class="conc-body">叛逆少年翻身傳奇、工程發明家、唐獎創辦人、壽險大股東、政治中介者——疊加在同一生涯軌道，使其形象很難被簡化成純粹的「善」或「惡」。</div>
+    </div>
+    <div class="conc-card">
+      <div class="conc-num">02</div>
+      <div class="conc-title">潤泰最關鍵結構是不動產開發、南山持股、工程技術與商場租金</div>
+      <div class="conc-body">紡織只是起點，2026 年現況下「潤泰是做紡織的」是嚴重誤判。若以單一產業角度觀察，很容易誤判集團財務結構。</div>
+    </div>
+    <div class="conc-card">
+      <div class="conc-num">03</div>
+      <div class="conc-title">專利是真正進過工地與材料鏈的專利，不是純掛名</div>
+      <div class="conc-body">技術可縮短工期約三分之一、降低人力需求約五成、減碳約一成五。核心價值是「讓營建更快、更穩、更標準化」。</div>
+    </div>
+    <div class="conc-card">
+      <div class="conc-num">04</div>
+      <div class="conc-title">公益偏向高可見度、長期制度型建設</div>
+      <div class="conc-body">每一項公益都有可追蹤的實體成果，同時幾乎都具有「社會影響」與「敘事資本」雙重效果。</div>
+    </div>
+    <div class="conc-card">
+      <div class="conc-num">05</div>
+      <div class="conc-title">對台灣政治文化的影響是雙面的</div>
+      <div class="conc-body">既能視為企業家積極參與公共事務，也能視為政商關係高度滲透的典型案例。「藍綠皆通、兩岸也能接」的能量，是優勢也是長年爭議核心。</div>
+    </div>
+  </div>
+
+  <div class="limitation-box fade-up">
+    <h3>研究限制</h3>
+    <p>其一，專利全量盤點仍未完成，本報告僅能列出可被公開交叉核對的代表性公開專利；若要做真正的專利家族地圖，需逐筆進入 TIPO、WIPO、USPTO 多輪比對。</p>
+    <p>其二，沒有單一「潤泰集團合併報表」，財務表格屬「核心公司代理」而非完整家族層級盤點。</p>
+    <p>其三，部分政治與爭議段落依賴長篇人物報導，而非完整法院卷證或政治獻金逐筆資料。</p>
+  </div>
+
+  <div class="section-label" style="color:rgba(255,255,255,0.4);margin-bottom:16px;">延伸研究方向</div>
+  <div class="fade-up">
+    <div class="next-card">
+      <span class="next-badge">方案 A</span>
+      <div class="next-title">財務版附錄</div>
+      <div class="next-body">逐年補齊潤泰創新、潤泰全球、潤弘、潤泰精材、南山人壽近五年完整財務表。適合簡報、投資或產業分析。</div>
+    </div>
+    <div class="next-card">
+      <span class="next-badge">方案 B</span>
+      <div class="next-title">專利家族版附錄</div>
+      <div class="next-body">把 753 件拆成國別、家族、技術領域、是否已失效、是否商業化。適合技術競爭力評估。</div>
+    </div>
+    <div class="next-card">
+      <span class="next-badge">方案 C</span>
+      <div class="next-title">政商關係版附錄</div>
+      <div class="next-body">把王金平、兩岸高校、南山併購、浩鼎案、藍綠互動路徑系統化。適合人物權力結構研究。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  尹衍樑與潤泰集團深度研究報告<br>
+  Deep Research Report · 2026年5月<br>
+  資料來源：潤泰創新年報 · 潤泰全球年報 · 唐獎基金會 · 工研院 · 中央社 · 天下雜誌 · 商周
+</footer>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <a href="#summary"      class="nav-pill"><span class="nav-pill-icon">📋</span><span class="nav-pill-label">總覽</span></a>
+    <a href="#legend"       class="nav-pill"><span class="nav-pill-icon">👤</span><span class="nav-pill-label">傳奇</span></a>
+    <a href="#patent"       class="nav-pill"><span class="nav-pill-icon">🔬</span><span class="nav-pill-label">專利</span></a>
+    <a href="#finance"      class="nav-pill"><span class="nav-pill-icon">📊</span><span class="nav-pill-label">財務</span></a>
+    <a href="#philanthropy" class="nav-pill"><span class="nav-pill-icon">🏛️</span><span class="nav-pill-label">公益</span></a>
+    <a href="#controversy"  class="nav-pill"><span class="nav-pill-icon">⚖️</span><span class="nav-pill-label">評議</span></a>
+    <a href="#timeline"     class="nav-pill"><span class="nav-pill-icon">📅</span><span class="nav-pill-label">時間軸</span></a>
+    <a href="#conclusion"   class="nav-pill"><span class="nav-pill-icon">✅</span><span class="nav-pill-label">結論</span></a>
+  </div>
+</nav>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.f-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.f-panel').forEach(function(p) { p.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + id);
+  if (panel) { panel.classList.add('active'); }
+  document.querySelectorAll('.f-tab').forEach(function(t) {
+    if (t.getAttribute('onclick') === "switchTab('" + id + "')") { t.classList.add('active'); }
+  });
+  if (id === 'cre') { buildChart(); }
+}
+
+function switchContrast(side) {
+  document.querySelectorAll('.ctoggle-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.contrast-panel').forEach(function(p) { p.classList.remove('active'); });
+  var panel = document.getElementById('cp-' + side);
+  if (panel) { panel.classList.add('active'); }
+  document.querySelectorAll('.ctoggle-btn').forEach(function(b) {
+    if (b.getAttribute('onclick') === "switchContrast('" + side + "')") { b.classList.add('active'); }
+  });
+}
+
+function buildChart() {
+  var container = document.getElementById('chart-cre');
+  if (!container || container.children.length > 0) return;
+  var data = [
+    { year: '2020', rev: 190.85, net: 85.58 },
+    { year: '2021', rev: 272.94, net: 184.10 },
+    { year: '2022', rev: 322.47, net: 91.55 },
+    { year: '2023', rev: 273.94, net: 77.45 },
+    { year: '2024', rev: 318.17, net: 165.63 }
+  ];
+  var maxVal = 350;
+  var chartH = 130;
+  data.forEach(function(d) {
+    var grp = document.createElement('div');
+    grp.className = 'bar-group';
+    var bwrap = document.createElement('div');
+    bwrap.className = 'bar-wrap';
+    var brev = document.createElement('div');
+    brev.className = 'bar bar-rev';
+    brev.style.height = Math.round((d.rev / maxVal) * chartH) + 'px';
+    brev.title = '營收 ' + d.rev + ' 億元';
+    var bnet = document.createElement('div');
+    bnet.className = 'bar bar-net';
+    bnet.style.height = Math.round((d.net / maxVal) * chartH) + 'px';
+    bnet.title = '淨利 ' + d.net + ' 億元';
+    bwrap.appendChild(brev);
+    bwrap.appendChild(bnet);
+    var lbl = document.createElement('div');
+    lbl.className = 'bar-label';
+    lbl.textContent = d.year;
+    grp.appendChild(bwrap);
+    grp.appendChild(lbl);
+    container.appendChild(grp);
+  });
+}
+
+// Active nav highlight on scroll
+var sections = document.querySelectorAll('section[id]');
+var pills = document.querySelectorAll('.nav-pill');
+function updateNav() {
+  var scrollY = window.scrollY + 120;
+  var current = '';
+  sections.forEach(function(s) {
+    if (s.offsetTop <= scrollY) { current = s.id; }
+  });
+  pills.forEach(function(p) {
+    p.classList.remove('active');
+    if (p.getAttribute('href') === '#' + current) { p.classList.add('active'); }
+  });
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+
+// Fade-up
+document.addEventListener('DOMContentLoaded', function() {
+  buildChart();
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+});
+</script>
+</body>
+</html>
